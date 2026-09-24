@@ -1,4 +1,4 @@
-# Bearn_Bash_Script
+# Learn_Bash_Script
 
 #🎬 Episode Summaries
 
