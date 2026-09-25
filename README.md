@@ -1,14 +1,12 @@
-# Learn_Bash_Script
+# Bash_Script_Note
 
-#🎬 Episode Summaries
-
-Ep 01 — Introduction
+#00: Introduction
 
 Goal: Understand what shell scripting is and when to automate tasks via Bash.
 
 Key Insight: Bash scripts allow you to chain terminal commands into predictable, repeatable automated workflows.
 
-#Ep 02 — Hello World & Shebang
+#01: Hello World & Shebang
 
 The Shebang (#!/bin/bash): Tells the kernel which interpreter must execute the script.
 
@@ -18,7 +16,7 @@ chmod +x my_script.sh    # Grant execute permission
 ./my_script.sh           # Execute script from current directory
 
 
-#Ep 03 — Variables & Subshells
+#02: Variables & Subshells
 
 Declaring: No spaces around the assignment operator: name="Linux".
 
@@ -29,7 +27,7 @@ Command Substitution: Capture command output into a variable via $(command):
 current_date=$(date +%F)
 
 
-#Ep 04 — Basic Math
+#03: Basic Math
 
 Bash handles integer math natively via arithmetic expansion:
 
@@ -39,7 +37,7 @@ echo "$result"
 
 Note: Floating-point arithmetic requires an external utility like bc.
 
-#Ep 05 — If Statements & Conditions
+#04: If Statements & Conditions
 
 Syntax: Always leave whitespace inside the test brackets [ ... ].
 
@@ -49,7 +47,7 @@ Numbers: -eq (equal), -ne (not equal), -gt (greater than), -lt (less than).
 
 Files: -f (exists & is a file), -d (exists & is a directory).
 
-#Ep 06 — Exit Codes
+#05: Exit Codes
 
 Every command returns an exit status from 0 to 255:
 
@@ -61,7 +59,7 @@ Check the exit code of the last run command with $?.
 
 Terminate a script intentionally with custom status: exit 1.
 
-#Ep 07 — While Loops
+#06: While Loops
 
 Executes repeatedly as long as the condition remains true:
 
@@ -72,11 +70,11 @@ while [ $counter -le 5 ]; do
 done
 
 
-#Ep 08 — Project: Universal Update Script
+#07: Project-Universal Update Script
 
 Hands-on project combining conditions and exit codes to auto-detect the operating system (/etc/os-release or /etc/debian_version / /etc/redhat-release) and invoke the appropriate package manager (apt, dnf, or pacman).
 
-Ep 09 — For Loops
+#08: For Loops
 
 Best for processing known lists or sets of items:
 
@@ -85,7 +83,7 @@ for file in *.log; do
 done
 
 
-#Ep 10 — Where to Store Scripts & $PATH
+#09: Where to Store Scripts & $PATH
 
 Avoid running scripts with ./ everywhere by saving them in standard directories in your $PATH:
 
@@ -93,7 +91,7 @@ Per-user scripts: ~/bin or ~/.local/bin
 
 System-wide scripts: /usr/local/bin
 
-#Ep 11 — Data Streams & Redirection
+#10:Data Streams & Redirection
 
 Standard Streams:
 
@@ -113,7 +111,7 @@ Redirect errors: command 2> error.log
 
 Suppress output: command > /dev/null 2>&1
 
-#Ep 12 — Functions
+#11: Functions
 
 Encapsulate repetitive logic to keep scripts DRY (Don't Repeat Yourself):
 
@@ -123,7 +121,7 @@ check_status() {
 check_status "nginx"
 
 
-#Ep 13 — Case Statements
+#12: Case Statements
 
 Provides cleaner, more readable syntax when checking a variable against multiple static patterns:
 
@@ -134,7 +132,7 @@ case "$action" in
 esac
 
 
-#Ep 14 — Scheduling Jobs - cron
+#13: Scheduling Jobs - cron
 
 Manage automated recurring schedules with crontab -e.
 
@@ -148,13 +146,13 @@ Cron syntax breakdown:
 * * * * * /path/to/script.sh
 
 
-#Ep 15 — Scheduling Jobs - at & systemd Timers
+#14: Scheduling Jobs - at & systemd Timers
 
 at command: Ideal for scheduling a single one-off future job (e.g., at 02:00 tomorrow).
 
 Overview of modern Linux service automation with systemd timers.
 
-#Ep 16 — Positional Arguments
+#15: Positional Arguments
 
 Inspect and handle dynamic arguments supplied from the command line:
 
@@ -166,7 +164,7 @@ $#: Number of arguments passed
 
 $@: All arguments as a list
 
-#Ep 17 — Project: Automated Backup Script
+#16: Project-Automated Backup Script
 
 Capstone automation script utilizing rsync or tar:
 
@@ -176,7 +174,7 @@ Ensures source and destination directories exist (-d).
 
 Generates date-stamped backup archives (date +%Y-%m-%d).
 
-#Ep 18 — Course Wrap-up & Next Steps
+#17: Course Wrap-up & Next Steps
 
 Summary of scripting conventions.
 
